@@ -1,0 +1,13 @@
+table test( 10 s ):
+	float: pot
+	float: temp
+
+while True:
+	waitNextMeasure()
+	float meas[2]
+	SDI12SingleMeasurement(0,meas,2)
+
+	pot = meas[0]
+	temp = meas[1]
+
+	saveTable()
